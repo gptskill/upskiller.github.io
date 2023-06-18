@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      color: white;
+    }
+    
+    .logo {
+      font-family: Futura, sans-serif;
+      color: rgb(145, 140, 242);
+      font-weight: bold;
+    }
+    
+    .button {
+      font-family: 'Inter', sans-serif;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .button.primary {
+      background-color: rgb(21, 24, 33);
+      color: rgb(255, 255, 255);
+      font-size: 15px;
+    }
+    
+    .button.primary:hover {
+      background-color: rgb(30, 32, 41);
+    }
+    
+    .button.cta {
+      background-color: rgb(255, 255, 255);
+      color: rgb(21, 24, 33);
+      font-weight: bold;
+    }
+    
+    .button.cta:hover {
+      background-color: rgb(230, 230, 230);
+      color: rgb(21, 24, 33);
+    }
+    
+    .section1 {
+      text-align: center;
+      margin-top: 100px;
+    }
+    
+    .section1 h1 {
+      font-size: 48px;
+      color: rgb(230, 230, 230);
+    }
+    
+    .section1 span.highlight {
+      color: rgb(145, 140, 242);
+    }
+    
+    .section1 p {
+      font-size: 20px;
+      color: rgb(161, 164, 170);
+      margin-top: 20px;
+      margin-bottom: 55px;
+    }
+    
+    .section1 .button.cta {
+      margin-top: 30px;
+    }
+
+    .box-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .box {
+      background-color: rgb(21, 24, 33);
+      color: white;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    .box .icon {
+      margin-right: 10px;
+    }
+    
+    .time-line {
+      position: relative;
+      height: 1px;
+      width: 100%;
+      background-image: linear-gradient(to right, rgba(161, 164, 170, 0), rgb(161, 164, 170), rgba(161, 164, 170, 0));
+      margin-top: 30px;
+    }
+
+    .enrolled-line {
+      font-size: 15px;
+      color: rgb(97, 209, 172);
+      margin-top: 60px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    .faq-line {
+      font-size: 15px;
+      color: rgb(236, 63, 187);
+      margin-top: 60px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    .workshop-line {
+      font-size: 48px;
+      color: rgb(230, 230, 230);
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 55px;
+      font-weight: bold;
+    }
+    
+    .section2 p {
+      font-size: 20px;
+      color: rgb(161, 164, 170);
+      margin-top: 20px;
+      margin-bottom: 55px;
+      text-align: center;
+    }
+    
+    .section2 ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    
+    .section2 li {
+      display: inline-block;
+      width: 400px;
+      background-color: rgb(21, 24, 33);
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      margin: 10px;
+      text-align: center;
+      border: 1px solid rgb(54, 54, 54);
+    }
+
+    .testimonials {
+      font-size: 15px;
+      color: rgb(236, 245, 137);
+      margin-top: 60px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+  
+    .testimonial-box {
+      background-color: rgb(21, 24, 33);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      max-width: 600px; /* Adjust the width as per your preference */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .testimonial-box .stars {
+      color: rgb(236, 245, 137);
+      margin-bottom: 10px;
+    }
+
+    .testimonial-box .content {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-box .author {
+      font-size: 15px;
+      color: rgb(161, 164, 170);
+    }
+
+    .box-below {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 60px;
+    }
+
+    .box-below .image img {
+      max-width: 500px;
+      height: auto;
+    }
+
+    .box-below .description {
+      text-align: center;
+      margin-top: 5px;
+      width:40%; /* Adjust the width as desired */
+      line-height: 1.5; /* Adjust the line spacing as desired */
+    }
+
+    .box-below .description p {
+      color: rgb(161, 164, 170);
+    }
+
+    .box-below .description a {
+      color: rgb(145, 140, 242);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .box-below .description a:hover {
+      color: rgb(97, 209, 172);
+    }
+
+    /* Custom styles */
+    
+    .pricing-box {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 350px;
+      background-color: rgb(21, 24, 33);
+      border-radius: 8px;
+      margin: 0 auto;
+      margin-top: 50px;
+      padding: 6%;
+    }
+
+    .pricing-box-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      align-items: left;
+      padding-left: 6%;
+      padding-right: 6%;
+    }
+
+    .pricing-title {
+      font-size: 17px;
+      color: rgb(102, 135, 235);
+      margin-bottom: 10px;
+    }
+
+    .pricing-desc {
+      font-size: 15px;
+      color: rgb(161, 164, 170);
+      margin-bottom: 10px;
+      padding-right: 6%;
+    }
+
+    .pricing-price {
+      font-size: 36px;
+      color: white;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-list {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .checkbox-list li {
+      margin-bottom: 10px;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox-list li .checkbox-icon {
+      margin-right: 5px;
+      color: rgb(145, 140, 242);
+    }
+
+    .button.bta {
+      background-color: rgb(255, 255, 255);
+      color: rgb(21, 24, 33);
+      font-weight: bold;
+      text-align: center;
+      width: 80%;
+    }
+    
+    .button.bta:hover {
+      background-color: rgb(114, 111, 223);
+      color: rgb(255, 255, 255);
+      
+    }
+
+    .faq-section {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 50px;
+      text-align: center;
+    }
+    
+    .faq-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    
+    .faq-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    
+    .faq-item {
+      margin-bottom: 30px;
+    }
+    
+    .faq-question {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: white;
+    }
+    
+    .faq-answer {
+      font-size: 16px;
+      color: rgb(210, 210, 210);
+    }
+
+    .faq-answer-highlight {
+      border-bottom: 2px solid rgb(255, 255, 255); /* Adjust the thickness and color as per your preference */
+      padding-bottom: 5px;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+    
+    .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 800px;
+      width: 90%;
+      max-height: 80vh;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      overflow-y: auto;
+    }
+    
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+    
+    /* Styles for the link */
+    .privacy-link {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    
+    /* Additional styles for center-aligning the line */
+    .organization-name {
+      text-align: center;
+      padding: 0 20px;
+    }
+    .organization-text {
+      text-align: center;
+      padding: 80 20px;
+      color: aliceblue;
+    }
+
+    footer {
+    text-align: center;
+    background-color: #000000;
+    padding: 20px;
+    }
+
+    .social-media {
+      margin-top: 10px;
+    }
+
+    .social-media a {
+      margin: 0 10px;
+      color: #fff;
+    }
+
+    .about-us {
+      margin-top: 20px;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">UPSKILLER</div>
+    <a class="button primary" href="https://wa.me/7620410439" target="_blank"><i class="far fa-calendar"></i>   Check Dates Here!</a>
+  </div>
+  
+  <section class="section1">
+    <h1>Unleash the Power of <span class="highlight">Generative AI</span></h1>
+    <p>Master the art of ChatGPT prompt engineering and unlock the power of AI-driven conversational experiences.</p>
+    <a class="button cta" href="https://wa.me/7620410439" target="_blank">Book Now @ Rs 299</a>
+  </section>
+
+  <div class="box-container">
+    <div class="box">
+      <i class="far fa-calendar-alt icon"></i>
+      29 June 2023
+    </div>
+    <div class="box">
+      <i class="far fa-clock icon"></i>
+      4 p.m.
+    </div>
+  </div>
+  
+  <div class="time-line"></div>
+
+  <p class="enrolled-line">CONTENTS OF THE WORKSHOP</p>
+  <p class="workshop-line">What makes this Workshop so special</p>
+  
+  <section class="section2">
+    <p>100 hours of content is zipped into this 3-hour session to save your time and take action on upskilling.</p>
+    <ul>
+      <li>Understand all the hype about AI and why ChatGPT is a force to reckon with</li>
+      <li>Discover how ChatGPT and other Generative AI models work</li>
+      <li>Know the specific use cases, advantages, and constraints of some of the different models</li>
+      <li>Learn the art and science of prompting and what makes a prompt perfect</li>
+      <li>Learn the Magic Prompt formula to always get the best output from ChatGPT</li>
+      <li>Understand the pitfalls of ChatGPT and what not to use it for</li>
+      <li>Develop an understanding of how to leverage AI in your specific professional </li>
+      <li>Learn about some of the most useful AI tools and extensions</li>
+      <li>Bonus tools, tips and tricks for selective attendees</li>
+    </ul>
+  </section>
+
+  <div class="time-line"></div>
+
+  <p class="faq-line">PRICING</p>
+  <p class="workshop-line">Simple and Transparent Pricing</p>
+  <section class="section2">
+    <p>Get everything at a price of movie ticket. Lifetime access to content and updates.</p>
+  </section>
+
+
+  <div class="pricing-box">
+    <div class="pricing-box-overlay">
+      <div class="pricing-title">All of this at just</div>
+      <div class="pricing-price">₹299</div>
+      <div class="pricing-desc">After this workshop you will have access to these perks and much more</div>
+      <ul class="checkbox-list">
+        <li><i class="fas fa-check checkbox-icon"></i>Access to all content and recordings</li>
+        <li><i class="fas fa-check checkbox-icon"></i>Access to tools and prompts curated for you</li>
+        <li><i class="fas fa-check checkbox-icon"></i>Hands-on implementation</li>
+        <li><i class="fas fa-check checkbox-icon"></i>Updates on future developments</li>
+        <li><i class="fas fa-check checkbox-icon"></i>Exclusive access to community of AI</li>
+      </ul>
+      
+      <a class="button bta" href="https://wa.me/7620410439" target="_blank">Book Now</a>
+
+    </div>
+  </div>
+  
+  <div class="time-line"></div>
+  
+  <p class="testimonials">TESTIMONIALS</p>
+  <p class="workshop-line">Our attendees have some message to share</p>
+  <section class="section2">
+    <p>This workshop will be a new way of doing tasks</p>
+  </section>
+  <div class="testimonial-box">
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+    </div>
+    <div class="content">This workshop is simply mind-blowing! I've learned so much about ChatGPT and how to optimize its performance. Highly recommended!</div>
+    <div class="author">- John Doe, CEO of ABC Company</div>
+  </div>
+
+  <div class="testimonial-box">
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      
+    </div>
+    <div class="content">The workshop exceeded my expectations. The hands-on exercises helped me gain practical knowledge and confidence in using ChatGPT effectively.</div>
+    <div class="author">- Jane Smith, Data Scientist</div>
+  </div>
+
+  <div class="testimonial-box">
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+    </div>
+    <div class="content">Fantastic workshop! The instructor was knowledgeable and provided valuable insights. I can't wait to apply what I've learned in my projects.</div>
+    <div class="author">- Mark Johnson, AI Enthusiast</div>
+  </div>
+  
+  <div class="time-line"></div>
+
+  <p class="faq-line">NEWS</p>
+  <p class="workshop-line">Everyone is talking about this skill</p>
+  <section class="section2">
+    <p>This boom in word AI has created alot of chaos but check these news</p>
+  </section>
+  <div class="box-below">
+    <div class="image">
+      <img src="C:\Users\lapado\OneDrive - SAS\Desktop\chatgpt\news.png" alt="Wipro Logo">
+    </div>
+    <div class="description">
+      <p>Prompt Engineering is becoming a sought-after skill, with various job-searching platforms featuring listings for prompt engineering roles.</p>
+      <a href="https://www.livemint.com/technology/ai-prompt-engineering-is-the-new-big-career-with-an-annual-salary-of-up-to-rs-2-cr-heres-how-to-learn-it-11684136403307.html" target="_blank">Read more</a>
+    </div>
+  </div>
+
+  <div class="box-below">
+    <div class="image">
+      <img src="C:\Users\lapado\OneDrive - SAS\Desktop\chatgpt\wipro.png" alt="Wipro Logo">
+    </div>
+    <div class="description">
+      <p>Read the latest news about Wipro's compensation policy change. Find out what Wipro CHRO Saurabh Govil has to say about hiring practices and salary hikes.</p>
+      <a href="https://sightsinplus.com/news/compensation/wipro-chro-saurabh-govil-says-no-more-hiring-with-30-hike/" target="_blank">Read more</a>
+    </div>
+  </div>
+
+  <div class="box-below">
+    <div class="image">
+      <img src="C:\Users\lapado\OneDrive - SAS\Desktop\chatgpt\ai.png" alt="Wipro Logo">
+    </div>
+    <div class="description">
+      <p>
+        Generative AI applications and tools are solutions for generating original content based on training from massive AI models.</p>
+      <a href="https://www.eweek.com/artificial-intelligence/generative-ai-apps-tools/" target="_blank">Read more</a>
+    </div>
+  </div>
+  
+
+  <div class="time-line"></div>
+
+  <p class="enrolled-line">FAQ</p>
+  <p class="workshop-line">Got question ?</p>
+  <section class="section2">
+    <p>If you have any question- please get in touch at <span class="faq-answer-highlight">padolelayesh@gmail.com</span></p>
+  </section>
+
+  <div class="faq-section">
+    <ul class="faq-list">
+      <li class="faq-item">
+        <div class="faq-question">What is the duration of the workshop?</div>
+        <div class="faq-answer">The workshop is scheduled for one full day, from 9:00 AM to 5:00 PM.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-question">Is there any prerequisite knowledge required?</div>
+        <div class="faq-answer">No, this workshop is designed for beginners and no prior knowledge is required.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-question">What will be included in the workshop?</div>
+        <div class="faq-answer">The workshop will include hands-on exercises, live demonstrations, and interactive sessions with industry experts.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-question">Will I receive a certificate after completing the workshop?</div>
+        <div class="faq-answer">Yes, participants who successfully complete the workshop will receive a certificate of completion.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-question">Are there any group discounts available?</div>
+        <div class="faq-answer">Yes, we offer group discounts for organizations or groups of five or more participants. Please contact us for more details.</div>
+      </li>
+    </ul>
+  </div>
+  <div class="time-line"></div>
+
+  <p class="organization-text">
+    By using our services, you acknowledge that you have read and understood this 
+    <span class="privacy-link">Privacy Policy</span> and agree to the collection, 
+    use, and disclosure of your personal information as described herein.
+  </p>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="popup-close">&times;</span>
+      <h2 class="organization-name">At UPSKILLER, we take your privacy seriously.</h2>
+      <p>
+        This Privacy Policy outlines how we collect, use, and protect your personal information when you interact with our services and website. We are committed to ensuring the confidentiality and security of your data. By using our services, you consent to the practices described in this policy.
+      </p>
+      <!-- Rest of the Privacy Policy content goes here -->
+      <p>Information We Collect:
+
+        Personal Information: We may collect personal information, such as your name, email address, and contact details, when you voluntarily provide it to us.<br>
+        <br>Usage Data: We may collect information about your interactions with our services, such as your IP address, browser type, and device information. This data is collected through cookies and similar technologies.<br>
+        <br> Use of Information: We use the collected information to provide and improve our services, personalize your experience, and communicate with you.
+        Personal information may be used to send you updates, newsletters, or marketing communications if you have opted to receive them.
+        Usage data is collected to analyze trends, administer our website, and gather demographic information for aggregate use.<br>
+        <br>Data Sharing: We do not sell, trade, or rent your personal information to third parties. However, we may share it with trusted service providers who assist us in delivering our services.
+        We may also disclose personal information if required by law or to protect our rights, safety, or the rights and safety of others.<br>
+        <br>Data Security: We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.<br>
+        However, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security of your data.<br>
+        <br> Cookies: We use cookies and similar technologies to enhance your browsing experience, analyze usage patterns, and customize content.
+        You can control cookies through your browser settings, but disabling them may affect the functionality of our services.<br>
+        <br>Third-Party Links: Our services may contain links to third-party websites or services. We are not responsible for the privacy practices or content of those websites.<br>
+        <br>Children's Privacy: Our services are not intended for children under the age of 13. We do not knowingly collect personal information from children. If we become aware of such information being collected, we will take steps to delete it.<br>
+        <br>Updates to the Privacy Policy: We may update this Privacy Policy from time to time. Any changes will be posted on our website, and the revised policy will be effective upon posting.<br>
+        <br>Contact Us: If you have any questions or concerns regarding this Privacy Policy or the handling of your personal information, please contact us at [contact padolelayesh@gmail.com/7620410439].<br>
+        <br>By using our services, you acknowledge that you have read and understood this Privacy Policy and agree to the collection, use, and disclosure of your personal information as described herein.
+        
+        </p>
+      <!-- More long content... -->
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle the popup
+    document.addEventListener("DOMContentLoaded", function() {
+      var popup = document.getElementById("popup");
+      var link = document.querySelector(".privacy-link");
+      var close = document.querySelector(".popup-close");
+
+      // Show the popup when the link is clicked
+      link.addEventListener("click", function() {
+        popup.style.display = "block";
+      });
+
+      // Close the popup when the close button is clicked
+      close.addEventListener("click", function() {
+        popup.style.display = "none";
+      });
+
+      // Close the popup when the user clicks outside of it
+      window.addEventListener("click", function(event) {
+        if (event.target == popup) {
+          popup.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+<footer>
+  <div class="social-media">
+    <a href="https://www.facebook.com/example"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.twitter.com/example"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/example"><i class="fab fa-instagram"></i></a>
+  </div>
+  <div class="about-us">
+    <h3>About Me</h3>
+    <p>Hi, I'm Layesh Padole a solopreneur specializing in prompt engineering and harnessing the power of ChatGPT.<br> With a strong background in software development, I offer personalized mentoring and guidance to individuals <br>seeking to leverage ChatGPT's capabilities.
+      Our goal is to empower students like you by providing the knowledge <br>and tools to optimize your interactions with ChatGPT. I understand the importance of prompt engineering and <br>will help you craft effective queries that generate accurate and relevant responses.
+      With my practice,<br> I'll guide you in utilizing ChatGPT to enhance your productivity, creativity, and problem-solving abilities. <br>Join me on this exciting journey as we unlock the potential of ChatGPT <br></p>
+  </div>
+</footer>
+
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>
